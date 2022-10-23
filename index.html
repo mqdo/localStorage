@@ -1,22 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Play with localStorage</title>
-</head>
-<body>
-  <main>
-    <div class="todo">
-      <ul class="todo-list"></ul>
-      <form class="todo-interact">
-        <input type="text" name="add-todo" id="add-todo">
-        <button type="submit">+ Add</button>
-        <button>Check All</button>
-        <button type="reset">Reset</button>
-      </form>
-    </div>
-  </main>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Play with localStorage</title>
+  </head>
+  <body>
+    <main>
+      <div class="todo">
+        <h2>This is a Todo-list</h2>
+        <ul class="todo-list">
+        </ul>
+        <form class="todo-interact">
+          <div class="todo-add">
+            <input type="text" name="add-input" id="add-input" />
+            <button type="submit">+ Add</button>
+          </div>
+          <div class="todo-change">
+            <button class="all-done">Check All Done</button>
+            <button class="reset" type="reset">Reset</button>
+          </div>
+        </form>
+      </div>
+    </main>
+    <script src="./main.js"></script>
+  </body>
 </html>

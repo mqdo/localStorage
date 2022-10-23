@@ -1,0 +1,153 @@
+:root {
+  --todo-width: clamp(280px, 60%, 450px);
+  --main-color: #fcc600;
+  --layout-dark: rgba(0, 0, 0, 0.3);
+  --layout-light: rgba(255, 255, 255, 0.3);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+  font-family: "Open Sans", sans-serif;
+  overflow: hidden;
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+  background-color: antiquewhite;
+  position: relative;
+}
+
+input,
+button {
+  font-family: "Open Sans", sans-serif;
+  border: none;
+  border-radius: 5px;
+  height: 2.8rem;
+}
+
+button {
+  cursor: pointer;
+}
+
+.todo {
+  position: absolute;
+  top: 15%;
+  left: calc((100% - var(--todo-width)) / 2);
+  bottom: 15%;
+  width: var(--todo-width);
+  min-height: 60%;
+  background-color: #fcc600;
+  border-radius: 5px;
+  box-shadow: 5px 5px 2px 2px var(--layout-dark);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.todo > * {
+  border-radius: 5px;
+  width: 80%;
+}
+
+.todo h2 {
+  font-size: 2.4rem;
+  text-transform: uppercase;
+  line-height: 1.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.todo-list {
+  border: 2px dashed var(--layout-dark);
+  background: var(--layout-light);
+  padding: 1rem 2rem;
+  height: 64%;
+  overflow-y: auto;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.todo-list > * {
+  list-style-type: none;
+  text-align: left;
+  padding: 0.5rem 0;
+}
+
+.todo-list > li > label::before {
+  content: "⚫";
+  padding-right: 1rem;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"]:checked + label {
+  opacity: 0.6;
+}
+
+input[type="checkbox"]:checked + label::before {
+  content: "🖤";
+}
+
+.todo-interact {
+  height: 18%;
+  background-color: var(--layout-light);
+}
+
+.todo-interact > * {
+  padding-top: 1.5rem;
+}
+
+.todo-add > *:hover,
+.todo-change > *:hover {
+  opacity: 0.8;
+  transform: scaleY(1.1);
+}
+
+.todo-add > input {
+  background-color: var(--layout-light);
+  width: 70%;
+  padding: 5px;
+  margin-right: 2.5%;
+}
+
+.todo-add > input:focus {
+  background-color: var(--main-color);
+  transform: scaleY(1.1);
+  outline: none;
+}
+
+.todo-add > button {
+  width: 20%;
+}
+
+.todo-change {
+  text-align: left;
+}
+
+.todo-change > * {
+  width: 33%;
+  margin-left: 3.5%;
+}
+
+
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: var(--main-color);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
